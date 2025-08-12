@@ -1,0 +1,11 @@
+data_dir: data
+model_dir: models
+features:
+  - age
+  - country
+  - subscribed
+  - relationshipGoals
+  - aboutMe
+tfidf_max_features: 100
+anomaly_epochs: 100
+contamination: 0.1
