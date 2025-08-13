@@ -2,11 +2,13 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import streamlit as st
-import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
+import streamlit as st
 from src.run import FakeProfileDetector
+
+# Ensure src directory is in sys.path
+BASE_DIR = Path(__file__).parent
+sys.path.append(str(BASE_DIR))
 
 def main():
     st.title("🚩 Fake Profile Detector")
@@ -38,8 +40,18 @@ def main():
                 for reason in result['reasons']:
                     st.write(f"- {reason}")
                 st.write(f"**Similar Profile Indices**: {result['similar_profiles']}")
+                
+                output_df = pd.DataFrame([{
+                    'user_id': profile.get('user_id', 'unknown'),
+                    'prediction': 'Fake' if result['is_fake'] else 'Real',
+                    'confidence': result['confidence'],
+                    'reasons': '; '.join(result['reasons'])
+                }])
+                output_df.to_csv(BASE_DIR / 'data/fake_profile_predictions.csv', mode='a', index=False, header=not (BASE_DIR / 'data/fake_profile_predictions.csv').exists())
+            except FileNotFoundError as e:
+                st.error(f"Model files are missing. Please run 'python src/run.py --mode train' first: {e}")
             except Exception as e:
-                st.error(f"Error: {e}")
+                st.error(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main()
