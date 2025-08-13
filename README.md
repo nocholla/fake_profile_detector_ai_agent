@@ -15,6 +15,7 @@
 7. [Configuration](#-configuration)
 8. [Contributing](#-contributing)
 9. [License](#-license)
+10. [Screenshots](#-screenshots)
 
 ---
 
@@ -268,4 +269,14 @@ Licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ---
 
-This README provides a clear, concise, and professional overview of your project, with icons and formatting inspired by the Imara Chat Bot example. Let me know if you need adjustments or additional sections!
+## 📷 Screenshots
+
+<img width="1716" height="769" alt="1 Fake Profile Detection" src="https://github.com/user-attachments/assets/3ce40f3e-3cee-47db-808b-d19aa2806a2c" />
+
+<img width="1716" height="769" alt="2 Fake Profile Detection" src="https://github.com/user-attachments/assets/3047570f-a4b4-4cfd-8028-67719936f349" />
+
+<img width="1728" height="1026" alt="3 Fake Profile Detection" src="https://github.com/user-attachments/assets/2c5d3b23-4f25-4d38-ae48-11c613c8e879" />
+
+<img width="1728" height="1026" alt="4 Fake Profile Detection" src="https://github.com/user-attachments/assets/1ad96809-8671-40f3-be37-b397a2b7e2f9" />
+
+---
